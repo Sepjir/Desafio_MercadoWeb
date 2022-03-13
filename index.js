@@ -4,10 +4,12 @@ const app = express()
 const fs = require("fs")
 const exphbrs = require("express-handlebars")
 
-//Disponibilizando los assets y archivos css y js de Bootstrap
+//Disponibilizando los assets y archivos css y js de Bootstrap y jQuery
 app.use(express.static(__dirname + "/assets"))
 app.use("/bootstrap", express.static(__dirname + "/node_modules/bootstrap/dist/css"))
 app.use("/bootstrap", express.static(__dirname + "/node_modules/bootstrap/dist/js"))
+app.use("/jquery", express.static(__dirname + "/node_modules/jquery/dist"))
+
 
 //configurando las vistas de handlebars-express
 app.set("view engine", "handlebars")
